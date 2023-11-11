@@ -11,7 +11,7 @@
         upgrade: yes
         cache_valid_time: 3600
     - name: make sure the latest npm is installed
-        command: npm install -g npm
+      command: npm install -g npm
     - name: Download & Update Magic Mirror
       ansible.builtin.git:
         repo: https://github.com/MichMich/MagicMirror
