@@ -10,6 +10,10 @@
         update_cache: yes
         upgrade: yes
         cache_valid_time: 3600
+    - name: Update and Install Magic Mirror
+        repo: https://github.com/MichMich/MagicMirror
+        dest: /home/pi/MagicMirror
+        update: true
     - name: Update Magic Mirror
       community.general.npm:
         path: /home/pi/MagicMirror
