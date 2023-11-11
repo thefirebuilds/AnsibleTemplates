@@ -1,5 +1,5 @@
 ---
-- name: Reboot Hosts
+- name: Update Magic Mirror and Modules
   hosts: all
   gather_facts: no
   become: true
