@@ -10,12 +10,14 @@
         update_cache: yes
         upgrade: yes
         cache_valid_time: 3600
-    - name: Update and Install Magic Mirror
+    - name: make sure the latest npm is installed
+        command: npm install -g npm
+    - name: Download & Update Magic Mirror
       ansible.builtin.git:
         repo: https://github.com/MichMich/MagicMirror
         dest: /home/pi/MagicMirror
         update: true
-    - name: Update Magic Mirror
+    - name: Update & Install Magic Mirror
       community.general.npm:
         path: /home/pi/MagicMirror
     - name: Update Calendar Module
