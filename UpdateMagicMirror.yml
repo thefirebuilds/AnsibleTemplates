@@ -20,7 +20,7 @@
         update: true
     - name: Installing Calendar Module
       community.general.npm:
-      path: /home/pi/MagicMirror/modules/MMM-CalendarExt2
+        path: /home/pi/MagicMirror/modules/MMM-CalendarExt2
     - name: Reboot the machine (Wait for 5 min)
       reboot:
         reboot_timeout: 300
