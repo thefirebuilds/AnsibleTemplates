@@ -1,0 +1,9 @@
+---
+- name: Reboot Hosts
+  hosts: all
+  gather_facts: no
+ 
+  tasks:
+    - name: Reboot the machine (Wait for 5 min)
+      reboot:
+        reboot_timeout: 300
