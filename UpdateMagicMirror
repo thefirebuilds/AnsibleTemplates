@@ -1,0 +1,26 @@
+---
+- name: Reboot Hosts
+  hosts: all
+  gather_facts: no
+  become: true
+ 
+  tasks:
+    - name: Apt Update
+      ansible.builtin.apt:
+        update_cache: yes
+        upgrade: yes
+        cache_valid_time: 3600
+    - name: Update Magic Mirror
+      community.general.npm:
+        path: /home/pi/MagicMirror
+    - name: Update Calendar Module
+      ansible.builtin.git:
+        repo: https://github.com/MMM-CalendarExt2/MMM-CalendarExt2
+        dest: /home/pi/MagicMirror/modules/MMM-CalendarExt2
+        update: true
+    - name: Installing Calendar Module
+      community.general.npm:
+      path: /home/pi/MagicMirror/modules/MMM-CalendarExt2
+    - name: Reboot the machine (Wait for 5 min)
+      reboot:
+        reboot_timeout: 300
