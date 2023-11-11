@@ -1,0 +1,11 @@
+---
+- name: Reinstall NPM
+  hosts: all
+  gather_facts: no
+  become: true
+ 
+  tasks:
+    - name: remove package
+      apt: name=package_name state=absent
+    - name: install package
+      apt: name=package_name state=present update_cache=yes
