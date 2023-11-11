@@ -11,6 +11,7 @@
         upgrade: yes
         cache_valid_time: 3600
     - name: Update and Install Magic Mirror
+      ansible.builtin.git:
         repo: https://github.com/MichMich/MagicMirror
         dest: /home/pi/MagicMirror
         update: true
