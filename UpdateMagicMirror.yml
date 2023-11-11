@@ -5,13 +5,13 @@
   become: true
  
   tasks:
-    - name: Apt Update
+    - name: Apt Update & Upgrade
       ansible.builtin.apt:
         update_cache: yes
         upgrade: yes
         cache_valid_time: 3600
     - name: make sure the latest npm is installed
-      command: npm install -g npm
+      command: npm install -v
     - name: Download & Update Magic Mirror
       ansible.builtin.git:
         repo: https://github.com/MichMich/MagicMirror
