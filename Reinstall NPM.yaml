@@ -6,6 +6,6 @@
  
   tasks:
     - name: remove package
-      apt: name=package_name state=absent
+      apt: name=npm state=absent
     - name: install package
-      apt: name=package_name state=present update_cache=yes
+      apt: name=npm state=present update_cache=yes
