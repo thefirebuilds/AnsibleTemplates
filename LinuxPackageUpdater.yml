@@ -5,10 +5,12 @@
   become_method: 'sudo'
   
   tasks:
+    - name: Update apt list
+      apt:
+        update_cache: yes
     - name: APT Package Updater
       apt:
         upgrade: yes
-        update_cache: yes
     - name: Reboot the machine (Wait for 5 min)
       reboot:
         reboot_timeout: 300
