@@ -3,16 +3,10 @@
   become: true
   become_method: sudo
   tasks:
-    - name: Update Apt List
+    - name: Update Apt List & Upgrade
       apt:
         update_cache: yes
-      become: true
-      become_method: sudo
-    - name: APT Package Updater
-      apt:
         upgrade: yes
-      become: true
-      become_method: sudo
     - name: Reboot the machine (Wait for 5 min)
       reboot:
         reboot_timeout: 300
