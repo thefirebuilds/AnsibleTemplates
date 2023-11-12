@@ -1,7 +1,7 @@
 ---
 - hosts: all
   become: true
-  become_method: szdo
+  become_method: dzdo
   tasks:
     - name: Update Apt List & Upgrade
       apt:
