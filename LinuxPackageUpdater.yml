@@ -1,7 +1,8 @@
 ---
 - hosts: all
   remote_user: ansible
-  become: yes
+  become: true
+  become_method = 'sudo'
   
   tasks:
     - name: APT Package Updater
