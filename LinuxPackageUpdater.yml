@@ -1,16 +1,13 @@
 ---
 - hosts: all
-  become: true
  
   tasks:
     - name: Update Apt List
       apt:
         update_cache: yes
-      become: yes
     - name: APT Package Updater
       apt:
         upgrade: yes
-      become: yes
     - name: Reboot the machine (Wait for 5 min)
       reboot:
         reboot_timeout: 300
