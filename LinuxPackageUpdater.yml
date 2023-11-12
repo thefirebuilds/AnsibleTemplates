@@ -5,9 +5,13 @@
     - name: Update Apt List
       apt:
         update_cache: yes
+      become: true
+      become_user: ansible
     - name: APT Package Updater
       apt:
         upgrade: yes
+      become: true
+      become_user: ansible
     - name: Reboot the machine (Wait for 5 min)
       reboot:
         reboot_timeout: 300
