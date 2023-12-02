@@ -2,8 +2,9 @@
 - name: Update Magic Mirror and Modules
   hosts: all
   gather_facts: no
-  become: true
+  become: yes
   become_user: pi
+  become_method: su
  
   tasks:
     - name: Apt Update & Upgrade
