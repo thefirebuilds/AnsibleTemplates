@@ -5,6 +5,7 @@
   become: true
   become_method: sudo
   become_user: pi
+  shell: whoami
  
   tasks:
     - name: Apt Update & Upgrade
