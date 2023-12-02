@@ -3,6 +3,7 @@
   hosts: all
   gather_facts: no
   become: true
+  become_user: pi
  
   tasks:
     - name: Apt Update & Upgrade
@@ -18,8 +19,6 @@
     - name: Update & Install Magic Mirror
       community.general.npm:
         path: /home/pi/MagicMirror
-        become: true
-        become_user: pi
     - name: Update Calendar Module
       ansible.builtin.git:
         repo: https://github.com/MMM-CalendarExt2/MMM-CalendarExt2
