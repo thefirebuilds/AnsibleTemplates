@@ -4,7 +4,7 @@
   gather_facts: no
   become: true
   become_method: sudo
-  sudo_user: pi
+  become_user: pi
  
   tasks:
     - name: Apt Update & Upgrade
