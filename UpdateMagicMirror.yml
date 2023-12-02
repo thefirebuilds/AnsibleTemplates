@@ -15,11 +15,11 @@
         repo: https://github.com/MichMich/MagicMirror
         dest: /home/pi/MagicMirror
         update: true
-        become: true
-        become_user: pi
     - name: Update & Install Magic Mirror
       community.general.npm:
         path: /home/pi/MagicMirror
+        become: true
+        become_user: pi
     - name: Update Calendar Module
       ansible.builtin.git:
         repo: https://github.com/MMM-CalendarExt2/MMM-CalendarExt2
