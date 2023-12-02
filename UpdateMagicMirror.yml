@@ -4,6 +4,7 @@
   gather_facts: no
   become: true
   become_method: sudo
+  sudo_user: scrapy
  
   tasks:
     - name: Apt Update & Upgrade
