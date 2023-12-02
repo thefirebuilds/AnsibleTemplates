@@ -3,9 +3,6 @@
   hosts: all
   gather_facts: no
   become: true
-  become_method: sudo
-  become_user: pi
-  shell: whoami
  
   tasks:
     - name: Apt Update & Upgrade
@@ -18,6 +15,8 @@
         repo: https://github.com/MichMich/MagicMirror
         dest: /home/pi/MagicMirror
         update: true
+        become: true
+        become_user: pi
     - name: Update & Install Magic Mirror
       community.general.npm:
         path: /home/pi/MagicMirror
