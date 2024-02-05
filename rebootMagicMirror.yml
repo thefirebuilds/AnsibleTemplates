@@ -1,0 +1,11 @@
+---
+- name: Reboot Magic Mirror
+  hosts: all
+  gather_facts: no
+  become: yes
+  become_method: sudo
+ 
+  tasks:
+    - name: Reboot the machine (Wait for 5 min)
+      reboot:
+        reboot_timeout: 300
