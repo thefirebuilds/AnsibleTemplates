@@ -1,5 +1,6 @@
 ---
 - name: Upgrade Portainer Edge Agent
+  hosts: all
   become: yes
   tasks:
     - name: Stop Portainer
