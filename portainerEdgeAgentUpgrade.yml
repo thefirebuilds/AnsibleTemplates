@@ -4,10 +4,10 @@
   become: yes
   tasks:
     - name: Stop Portainer
-      shell: docker stop portainer 
+      shell: docker stop portainer_edge_agent 
 
     - name: Remove Portainer
-      shell: docker rm portainer
+      shell: docker rm portainer_edge_agent
 
     - name: Create the volume that Portainer Server will use to store its database
       shell: docker volume create portainer_data
@@ -16,5 +16,5 @@
       shell: sudo docker pull portainer/portainer-ce:latest 
 
     - name: Run Portainer 
-      shell: docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent:latest
+      shell: docker run -d -p 9001:9001 --name portainer_edge_agent --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/volumes:/var/lib/docker/volumes portainer/agent:latest
 
