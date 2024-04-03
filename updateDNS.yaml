@@ -12,7 +12,7 @@
     register: key_content
   - name: Fetch Github DNS data
     uri:
-      url: 'https://raw.githubusercontent.com/thefirebuilds/dns/d31b27d9b9d79ea8aaef60b184e0a301d72a4081/custom.list'
+      url: 'https://github.com/thefirebuilds/dns/blob/429aec9897b991deb4806a865163092018b23dd1/custom.list'
       dest: "/etc/pihole/custom.list"
       method: GET
       headers:
