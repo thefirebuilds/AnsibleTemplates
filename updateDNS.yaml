@@ -15,4 +15,4 @@
       url: "https://github.com/thefirebuilds/dns/blob/d31b27d9b9d79ea8aaef60b184e0a301d72a4081/custom.list"
       dest: /etc/token
       headers:
-        token: '{{ key_content.stdout }}'
+        password: '{{ key_content.stdout }}'
