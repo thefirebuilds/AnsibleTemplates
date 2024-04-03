@@ -14,7 +14,5 @@
     ansible.builtin.get_url:
       url: "https://raw.githubusercontent.com/thefirebuilds/dns/d31b27d9b9d79ea8aaef60b184e0a301d72a4081/custom.list"
       dest: /etc/token
-      method: get
       headers:
         token: '{{ key_content.stdout }}'
-      register: _result
