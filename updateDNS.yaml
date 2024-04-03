@@ -16,5 +16,5 @@
       dest: /etc/token
       method: get
       headers:
-        token: {{ key_content.stdout }}        
-    register: _result
+        token: '{{ key_content.stdout }}'
+      register: _result
