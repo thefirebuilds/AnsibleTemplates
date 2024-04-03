@@ -14,4 +14,6 @@
     ansible.builtin.get_url:
       url: "https://github.com/thefirebuilds/dns/blob/d31b27d9b9d79ea8aaef60b184e0a301d72a4081/custom.list"
       dest: /etc/token
-      password: '{{ key_content.stdout }}'
+      headers:
+        key1: 'Authorization: {{key_content.stdout}}'
+        key2: 'Accept: application/vnd.github.v3.raw'
