@@ -19,6 +19,6 @@
       method: GET
       headers:
         'Content-Type: application/json'
-        'Authorization: token {{key_content.stdout}}'
+        'Authorization: token "{{key_content.stdout}}"'
         'Accept: application/vnd.github.v3.raw'
       force_basic_auth: true
