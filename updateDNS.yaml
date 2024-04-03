@@ -22,3 +22,4 @@
         Accept: application/vnd.github.v3.raw
       follow_redirects: safe
     register: result
+    dest: "/etc/token/custom.list"
