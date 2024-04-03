@@ -7,6 +7,8 @@
       apt:
         update_cache: yes
         upgrade: yes
+    - name: Update PiHole
+      command: pihole -up
     - name: Reboot the machine (Wait for 5 min)
       reboot:
         reboot_timeout: 300
