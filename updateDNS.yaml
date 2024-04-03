@@ -10,6 +10,7 @@
   - name: Grab Key
     command: "cat /etc/token/github.token"
     register: key_content
+    msg: {{key_content}}
   - name: Fetch Github DNS data
     uri:
       url: "https://github.com/thefirebuilds/dns/blob/d31b27d9b9d79ea8aaef60b184e0a301d72a4081/custom.list"
