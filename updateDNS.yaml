@@ -1,0 +1,17 @@
+---
+- name: Update DNS
+  hosts: all
+  gather_facts: no
+  become: true
+
+  tasks:
+  - name: Pinging Hosts
+    ansible.builtin.ping:
+  - name: Grab Key
+    command: "cat /etc/token/github.token"
+    register: key_content
+  - name: Fetch Github DNS data
+    ansible.builtin.uri:
+      url: "https://raw.githubusercontent.com/thefirebuilds/dns/main/custom.list?token={{ key_content }}"
+      method: get
+    register: _result
