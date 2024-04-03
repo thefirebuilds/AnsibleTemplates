@@ -15,5 +15,5 @@
       url: "https://github.com/thefirebuilds/dns/blob/d31b27d9b9d79ea8aaef60b184e0a301d72a4081/custom.list"
       method: GET
       headers:
-        Authorization: token {{key_content.stdout}}
-        Accept: application/vnd.github.v3.raw        
+        Authorization: "token {{key_content.stdout}}"
+        Accept: "application/vnd.github.v3.raw"
