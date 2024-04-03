@@ -10,9 +10,6 @@
   - name: Grab Key
     command: "cat /etc/token/github.token"
     register: key_content
-  - name: output key_content
-    ansible.builtin.debug:
-      msg: "{{key_content.stdout}}"
   - name: Fetch Github DNS data
     uri:
       url: 'https://raw.githubusercontent.com/thefirebuilds/dns/d31b27d9b9d79ea8aaef60b184e0a301d72a4081/custom.list'
