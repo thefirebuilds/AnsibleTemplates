@@ -12,7 +12,7 @@
     register: key_content
   - name: output key_content
     ansible.builtin.debug:
-      msg: {{key_content}}
+      msg: "{{key_content}}"
   - name: Fetch Github DNS data
     uri:
       url: "https://github.com/thefirebuilds/dns/blob/d31b27d9b9d79ea8aaef60b184e0a301d72a4081/custom.list"
