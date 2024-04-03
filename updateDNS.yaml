@@ -15,10 +15,10 @@
       msg: "{{key_content.stdout}}"
   - name: Fetch Github DNS data
     uri:
-      url: "https://github.com/thefirebuilds/dns/blob/d31b27d9b9d79ea8aaef60b184e0a301d72a4081/custom.list"
+      url: 'https://raw.githubusercontent.com/thefirebuilds/dns/d31b27d9b9d79ea8aaef60b184e0a301d72a4081/custom.list'
       method: GET
       headers:
-        Content-Type: application/json
-        Authorization: token "{{key_content.stdout}}"
+        Authorization: 'token "{{key_content.stdout}}"'
         Accept: application/vnd.github.v3.raw
-      force_basic_auth: true
+      follow_redirects: safe
+    register: result
