@@ -10,6 +10,7 @@
   - name: Grab Key
     command: "cat /etc/token/github.token"
     register: key_content
+  - ansible.builtin.debug:
     msg: {{key_content}}
   - name: Fetch Github DNS data
     uri:
