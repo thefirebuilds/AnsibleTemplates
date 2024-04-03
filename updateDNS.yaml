@@ -12,7 +12,7 @@
     register: key_content
   - name: Fetch Github DNS data
     ansible.builtin.get_url:
-      url: "https://raw.githubusercontent.com/thefirebuilds/dns/d31b27d9b9d79ea8aaef60b184e0a301d72a4081/custom.list"
+      url: "https://github.com/thefirebuilds/dns/blob/d31b27d9b9d79ea8aaef60b184e0a301d72a4081/custom.list"
       dest: /etc/token
       headers:
         token: '{{ key_content.stdout }}'
