@@ -20,3 +20,5 @@
         Accept: application/vnd.github.v3.raw
       follow_redirects: safe
     register: result
+  - name: Restart DNS Server
+    ansible.builtin.command: pihole restartdns
