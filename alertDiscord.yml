@@ -8,6 +8,8 @@
   tasks:
     - name: Disk usage from command module
       ansible.builtin.command: df -h
+    - debug: msg="{{ hello.stdout }}"
+      
     - name: Send a message to the Discord channel
       community.general.discord:
         webhook_id: "1269357115387023421"
