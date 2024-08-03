@@ -1,5 +1,5 @@
 ---
-- name: Update Magic Mirror and Modules
+- name: Report VM Drive Size
   hosts: all
   gather_facts: no
   become: yes
