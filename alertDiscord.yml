@@ -1,0 +1,5 @@
+- name: Send a message to the Discord channel
+  community.general.discord:
+    webhook_id: "00000"
+    webhook_token: "XXXYYY"
+    content: "This is a message from ansible"
