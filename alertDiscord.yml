@@ -7,7 +7,7 @@
  
   tasks:
     - name: Disk usage from command module
-      ansible.builtin.shell: "df -h -T -x, --exclude-type=cifs"
+      ansible.builtin.shell: "df -h"
       register: size
     - debug: "{{ size.stdout }}"
     - name: Send a message to the Discord channel
