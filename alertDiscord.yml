@@ -8,9 +8,7 @@
   tasks:
     - name: Disk usage from command module
       ansible.builtin.command: df -h -T -x, --exclude-type=cifs
-      register: size
-    - debug: msg= "{{ size.stdout }}"
-      
+      register: size      
     - name: Send a message to the Discord channel
       community.general.discord:
         webhook_id: "1269357115387023421"
