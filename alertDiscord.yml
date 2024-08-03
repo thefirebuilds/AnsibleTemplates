@@ -8,8 +8,6 @@
   tasks:
     - name: Disk usage from command module
       ansible.builtin.command: df -h
-    - ansible.builtin.debug:
-      var: space.stdout_lines
     - name: Send a message to the Discord channel
       community.general.discord:
         webhook_id: "1269357115387023421"
