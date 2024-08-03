@@ -8,7 +8,8 @@
   tasks:
     - name: Disk usage from command module
       ansible.builtin.command: df -h
-    - debug: msg= "{{ hello.stdout }}"
+      register: size
+    - debug: msg= "{{ size.stdout }}"
       
     - name: Send a message to the Discord channel
       community.general.discord:
