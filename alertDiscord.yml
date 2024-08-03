@@ -1,5 +1,13 @@
-- name: Send a message to the Discord channel
-  community.general.discord:
-    webhook_id: "1269357115387023421"
-    webhook_token: "STlO37fWLv7COniVYGetviEYySAhkko9hHAmhwT6hCzOfuAR4FAsVeBv41mX5t0NlxRQ"
-    content: "This is a message from ansible"
+---
+- name: Update Magic Mirror and Modules
+  hosts: all
+  gather_facts: no
+  become: yes
+  become_method: sudo
+ 
+  tasks:
+    - name: Send a message to the Discord channel
+      community.general.discord:
+        webhook_id: "1269357115387023421"
+        webhook_token: "STlO37fWLv7COniVYGetviEYySAhkko9hHAmhwT6hCzOfuAR4FAsVeBv41mX5t0NlxRQ"
+        content: "This is a message from ansible"
