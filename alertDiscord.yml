@@ -38,4 +38,4 @@
       community.general.discord:
         webhook_id: "1269357115387023421"
         webhook_token: "STlO37fWLv7COniVYGetviEYySAhkko9hHAmhwT6hCzOfuAR4FAsVeBv41mX5t0NlxRQ"
-        content: "These Hosts Are Unreachable: {{down}}"
+        content: "`These Hosts Are Unreachable: {{down}}`"
