@@ -7,7 +7,7 @@
  
   tasks:
     - name: Disk usage from command module
-      ansible.builtin.shell: "df -k -h -x, --exclude-type=cifs --output=pcent / | sed 1d"
+      ansible.builtin.shell: "df -k -h --output=pcent / | sed 1d"
       register: size
     - name: Send a message to the Discord channel
       community.general.discord:
