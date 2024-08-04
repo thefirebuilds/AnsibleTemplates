@@ -27,7 +27,7 @@
       community.general.discord:
         webhook_id: "1269357115387023421"
         webhook_token: "STlO37fWLv7COniVYGetviEYySAhkko9hHAmhwT6hCzOfuAR4FAsVeBv41mX5t0NlxRQ"
-        content: "Nightly VM Disk Consumption Report | {{ ansible_facts.ansible_date_time.date }}"
+        content: "Nightly VM Disk Consumption Report | {{ '%Y-%m-%d' | strftime }}"
     - name: Report Disk Percentage to Discord
       community.general.discord:
         webhook_id: "1269357115387023421"
