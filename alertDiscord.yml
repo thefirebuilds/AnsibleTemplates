@@ -4,6 +4,7 @@
   gather_facts: yes
   become: yes
   become_method: sudo
+  ignore_unreachable: true
  
   tasks:
     - name: Disk usage from command module
@@ -14,3 +15,8 @@
         webhook_id: "1269357115387023421"
         webhook_token: "STlO37fWLv7COniVYGetviEYySAhkko9hHAmhwT6hCzOfuAR4FAsVeBv41mX5t0NlxRQ"
         content: "{{ansible_hostname}} ({{inventory_hostname}}): {{size.stdout}} full"
+    - name: Send a message to the discord channel for unreachable hosts
+      community.general.discord:
+        webhook_id: "1269357115387023421"
+        webhook_token: "STlO37fWLv7COniVYGetviEYySAhkko9hHAmhwT6hCzOfuAR4FAsVeBv41mX5t0NlxRQ"
+        content: ""
