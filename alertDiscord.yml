@@ -4,10 +4,10 @@
   gather_facts: yes
   become: yes
   become_method: sudo
-  ignore_unreachable: true
- 
-  tasks:
-    -block:
+
+  - name: Perform ping in Template
+    ping:
+  - block:
       - debug:
           var: ansible_play_hosts_all
       - debug:
@@ -16,12 +16,12 @@
           down: "{{ ansible_play_hosts_all|difference(ansible_play_hosts) }}"
       - debug:
           var: down
-      run_once: true
-    - name: Disk usage from command module
-      ansible.builtin.shell: "df -k -h --output=pcent / | sed 1d"
-      register: size
-    - name: Send a message to the Discord channel
-      community.general.discord:
-        webhook_id: "1269357115387023421"
-        webhook_token: "STlO37fWLv7COniVYGetviEYySAhkko9hHAmhwT6hCzOfuAR4FAsVeBv41mX5t0NlxRQ"
-        content: "{{ansible_hostname}} ({{inventory_hostname}}): {{size.stdout}} full"
+    run_once: true
+  - name: Disk usage from command module
+    ansible.builtin.shell: "df -k -h --output=pcent / | sed 1d"
+    register: size
+  - name: Send a message to the Discord channel
+    community.general.discord:
+      webhook_id: "1269357115387023421"
+      webhook_token: "STlO37fWLv7COniVYGetviEYySAhkko9hHAmhwT6hCzOfuAR4FAsVeBv41mX5t0NlxRQ"
+      content: "{{ansible_hostname}} ({{inventory_hostname}}): {{size.stdout}} full"
