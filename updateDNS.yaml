@@ -10,17 +10,13 @@
   - name: Grab Key
     command: "cat /etc/token/github.token"
     register: key_content
-  - name: Print the gateway for each host when defined
-    ansible.builtin.debug:
-      msg: System {{ key_content.stdout }}
-    when: ansible_default_ipv4.gateway is defined
   - name: Fetch Github DNS data
     uri:
       url: 'https://raw.githubusercontent.com/thefirebuilds/dns/main/custom.list'
       dest: "/etc/pihole/custom.list"
       method: GET
       headers:
-        Authorization: 'token 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'
+        Authorization: 'token {{ key_content.stdout}}'
         Accept: application/vnd.github.v3.raw
       follow_redirects: safe
     register: result
