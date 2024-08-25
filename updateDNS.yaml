@@ -10,6 +10,10 @@
   - name: Grab Key
     command: "cat /etc/token/github.token"
     register: key_content
+  - name: Print the gateway for each host when defined
+    ansible.builtin.debug:
+      msg: System {{ key_content }}
+    when: ansible_default_ipv4.gateway is defined
   - name: Fetch Github DNS data
     uri:
       url: 'https://raw.githubusercontent.com/thefirebuilds/dns/main/custom.list'
