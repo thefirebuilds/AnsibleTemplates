@@ -23,7 +23,7 @@
   - name: Restart DNS Server
     ansible.builtin.command: pihole restartdns
   - name: Run a simple command (command)
-  community.docker.docker_container_exec:
-    container: pihole
-    command: /bin/bash -c "pihole restartdns"
-  register: result
+    community.docker.docker_container_exec:
+      container: pihole
+      command: /bin/bash -c "pihole restartdns"
+    register: result
