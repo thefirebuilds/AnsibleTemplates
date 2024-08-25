@@ -20,7 +20,7 @@
       dest: "/etc/pihole/custom.list"
       method: GET
       headers:
-        Authorization: 'token {{key_content.stdout}}'
+        Authorization: 'token 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'
         Accept: application/vnd.github.v3.raw
       follow_redirects: safe
     register: result
