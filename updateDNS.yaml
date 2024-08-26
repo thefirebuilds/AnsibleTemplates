@@ -13,7 +13,7 @@
   - name: Fetch Github DNS data
     uri:
       url: 'https://raw.githubusercontent.com/thefirebuilds/dns/main/custom.list'
-      dest: "/etc/pihole/custom.list"
+      dest: "/home/pihole/etc-pihole/custom.list"
       method: GET
       headers:
         Authorization: 'token {{ key_content.stdout}}'
