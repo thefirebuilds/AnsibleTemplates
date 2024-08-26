@@ -20,8 +20,6 @@
         Accept: application/vnd.github.v3.raw
       follow_redirects: safe
     register: result
-  - name: Restart DNS Server
-    ansible.builtin.command: pihole restartdns
   - name: Restart PiHole inside docker container
     community.docker.docker_container_exec:
       container: pihole
