@@ -22,4 +22,4 @@
       follow_redirects: safe
     register: result
   - name: Restart PiHole
-    ansible.builtin.shell: /home/pihole/restartDNS.sh
+    ansible.builtin.shell: sudo sh /home/pihole/restartDNS.sh
