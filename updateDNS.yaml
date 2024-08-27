@@ -21,8 +21,4 @@
       follow_redirects: safe
     register: result
   - name: Restart PiHole
-    community.docker.docker_container:
-      name: pihole
-      image: pihole/pihole
-      state: started
-      restart: true
+    ansible.builtin.shell: /home/pihole/restartDNS.sh
